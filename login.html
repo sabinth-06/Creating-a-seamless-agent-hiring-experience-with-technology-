@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Portal - Login</title>
+    <link href="./src/output.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    
+    <style>
+        .slider {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+        }
+        .slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+        .slide.active {
+            opacity: 1;
+        }
+        
+        /* Animated background elements */
+        .floating-shape {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            animation: float 15s infinite linear;
+            z-index: -1;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+            100% { transform: translateY(0) rotate(360deg); }
+        }
+        
+        /* Add the alert styles here */
+        .alert-success {
+            background: linear-gradient(to right, #34d399, #059669);
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            display: none;
+            align-items: center;
+            gap: 0.75rem;
+            animation: slideInRight 0.5s ease-out forwards;
+        }
+
+        @keyframes slideInRight {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+    </style>
+</head>
+
+<body class="h-screen w-screen bg-gradient-to-r from-blue-600 to-blue-900 bg-[url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070')] bg-no-repeat bg-cover bg-blend-overlay relative overflow-hidden opacity-100 backdrop-blur-sm">
+    <!-- Animated floating shapes -->
+    <!-- <div class="floating-shape w-64 h-64 top-[-5%] left-[10%] opacity-20" style="animation-duration: 25s;"></div>
+    <div class="floating-shape w-96 h-96 bottom-[-10%] right-[5%] opacity-15" style="animation-duration: 30s;"></div>
+    <div class="floating-shape w-48 h-48 top-[30%] right-[20%] opacity-10" style="animation-duration: 20s;"></div> -->
+    
+    <main class="flex justify-center items-center h-full w-full relative z-10">
+        <div class="h-[550px] w-[900px] flex bg-opacity-5 backdrop-blur-md shadow-xl rounded-xl border border-white/10">
+            <!-- Replace the single image with slider -->
+            <div class="w-1/2 h-full relative">
+                <div class="slider h-full">
+                    <img src="image6.file.jpg"
+                        class="h-full w-full object-cover rounded-l-xl slide active">
+                    <img src="https://images.unsplash.com/photo-1582407947304-fd86f028f716?q=80&w=2070"
+                        class="h-full w-full object-cover rounded-l-xl slide">
+                    <img src="image6.file.jpg"
+                        class="h-full w-full object-cover rounded-l-xl slide">
+                </div>
+                <!-- Overlay text on slider -->
+                <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6 rounded-bl-xl">
+                    <!-- <h2 class="text-white text-xl font-bold">Land Records & Property Tax Portal</h2>
+                    <p class="text-white/80 text-sm mt-2">Access your property information securely</p> -->
+                </div>
+            </div>
+            <!-- login details -->
+
+            <div class="h-full w-1/2 flex justify-center items-center bg-gradient-to-b from-blue-600/30 to-blue-800/30 backdrop-blur-sm rounded-r-xl">
+                <!-- Update the form tag to point to the login process script -->
+                <!-- Add this inside your form, after the form opening tag -->
+                <form action="login_process.php" method="POST" class="h-full rounded-xl">
+                    <?php if (isset($_SESSION['error'])): ?>
+                        <!-- <div class="bg-red-500 text-white p-3 rounded mb-4 text-center">
+                            <?php echo $_SESSION['error']; unset($_SESSION['error']); ?>
+                        </div> -->
+                    <!-- <?php endif; ?> -->
+                    <!-- Rest of your login form -->
+                    <!-- Logo -->
+                    <div class="flex justify-center items-center pt-20">
+                        <div class="bg-white/90 p-3 rounded-full shadow-lg">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-center items-center">
+                        <p class="pt-6 text-white font-extrabold tracking-wider drop-shadow-lg text-xl"> Portal Login</p>
+                    </div>
+                    <div class="flex space-x-4.5 items-center mt-6">
+                        <i class="fa-solid fa-user fa-xl" style="color: #ffffff;"></i>
+                        <input type="text" name="username" placeholder="Username or Email" class="bg-white/80 h-[40px] text-center w-[220px] rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400 transition" required>
+                    </div>
+                    <div class="flex space-x-4.5 items-center mt-5">
+                        <i class="fa-solid fa-lock fa-xl" style="color: #ffffff;"></i>
+                        <input type="password" name="password" placeholder="Password" class="bg-white/80 h-[40px] text-center w-[220px] rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400 transition" required>
+                    </div>
+                    <!-- button -->
+                    <div class="flex items-center justify-center text-center pt-6">
+                        <button type="submit" class="pl-8 pr-8 py-2.5 bg-blue-500 hover:bg-blue-600 text-white rounded-lg transition duration-300 shadow-md">Login</button>
+                    </div>
+                    <!-- Remove all other scripts and use this single script for form handling -->
+                    <script>
+                    document.querySelector('form').addEventListener('submit', function(event) {
+                        event.preventDefault();
+                        const formData = new FormData(this);
+                    
+                        fetch('login_process.php', {
+                            method: 'POST',
+                            body: formData
+                        })
+                        .then(response => response.text())
+                        .then(data => {
+                            if (data === "success") {
+                                window.location.href = 'index.html';
+                            } else {
+                                alert('Invalid username or password');
+                            }
+                        });
+                    });
+                    </script>
+                    <div class="flex items-center justify-center text-white/80 mt-4">
+                        New user? <a href="signup.html" class="ml-2 text-white hover:text-blue-300 transition font-bold">Sign up first</a>
+                    </div>
+                    <div class="flex justify-center mt-4">
+                        <a href="#" class="text-white/80 hover:text-white text-sm transition">Forgot Password?</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        
+        function showSlide(index) {
+            slides.forEach(slide => {
+                slide.classList.remove('active', 'previous');
+                slide.style.zIndex = "0";
+            });
+            
+            const prevIndex = (index - 1 + slides.length) % slides.length;
+            slides[prevIndex].classList.add('previous');
+            
+            slides[index].classList.add('active');
+            slides[index].style.zIndex = "1";
+        }
+
+        function changeSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        showSlide(currentSlide);
+        setInterval(changeSlide, 4000);
+    </script>
+</body>
+</html>
+
+<body class="h-screen w-screen bg-gradient-to-r from-blue-600 to-blue-900 bg-[url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070')] bg-no-repeat bg-cover bg-blend-overlay relative overflow-hidden opacity-100 backdrop-blur-sm">
+    <!-- Add the alert div at the top of body -->
+    <div id="loginAlert" class="alert-success">
+        <i class="fas fa-check-circle"></i>
+        <span>Login Successful! Welcome back.</span>
+    </div>
+
+    <main class="flex justify-center items-center h-full w-full relative z-10">
+        <div class="h-[550px] w-[900px] flex bg-opacity-5 backdrop-blur-md shadow-xl rounded-xl border border-white/10">
+            <!-- Replace the single image with slider -->
+            <div class="w-1/2 h-full relative">
+                <div class="slider h-full">
+                    <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=1973"
+                        class="h-full w-full object-cover rounded-l-xl slide active">
+                    <img src="https://images.unsplash.com/photo-1582407947304-fd86f028f716?q=80&w=2070"
+                        class="h-full w-full object-cover rounded-l-xl slide">
+                    <img src="https://images.unsplash.com/photo-1560520653-9e0e4c89eb11?q=80&w=1973"
+                        class="h-full w-full object-cover rounded-l-xl slide">
+                </div>
+                <!-- Overlay text on slider -->
+                <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6 rounded-bl-xl">
+                    <!-- <h2 class="text-white text-xl font-bold">Land Records & Property Tax Portal</h2>
+                    <p class="text-white/80 text-sm mt-2">Access your property information securely</p> -->
+                </div>
+            </div>
+            <!-- login details -->
+
+            <div class="h-full w-1/2 flex justify-center items-center bg-gradient-to-b from-blue-600/30 to-blue-800/30 backdrop-blur-sm rounded-r-xl">
+                <form action="login_process.php" method="POST" class="h-full rounded-xl" onsubmit="showLoginAlert(event)">
+                    <?php if (isset($_SESSION['error'])): ?>
+                        <div class="bg-red-500 text-white p-3 rounded mb-4 text-center">
+                            <?php echo $_SESSION['error']; unset($_SESSION['error']); ?>
+                        </div>
+                    <?php endif; ?>
+                    <!-- Rest of your login form -->
+                    <!-- Logo -->
+                    <div class="flex justify-center items-center pt-20">
+                        <div class="bg-white/90 p-3 rounded-full shadow-lg">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-center items-center">
+                        <p class="pt-6 text-white font-extrabold tracking-wider drop-shadow-lg text-xl"> Portal Login</p>
+                    </div>
+                    <div class="flex space-x-4.5 items-center mt-6">
+                        <i class="fa-solid fa-user fa-xl" style="color: #ffffff;"></i>
+                        <input type="text" name="username" placeholder="Username or Email" class="bg-white/80 h-[40px] text-center w-[220px] rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400 transition" required>
+                    </div>
+                    <div class="flex space-x-4.5 items-center mt-5">
+                        <i class="fa-solid fa-lock fa-xl" style="color: #ffffff;"></i>
+                        <input type="password" name="password" placeholder="Password" class="bg-white/80 h-[40px] text-center w-[220px] rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400 transition" required>
+                    </div>
+                    <!-- button -->
+                    <div class="flex items-center justify-center text-center pt-6">
+                        <button type="submit" class="pl-8 pr-8 py-2.5 bg-blue-500 hover:bg-blue-600 text-white rounded-lg transition duration-300 shadow-md">Login</button>
+                    </div>
+                    <div class="flex items-center justify-center text-white/80 mt-4">
+                        New user? <a href="signup.html" class="ml-2 text-white hover:text-blue-300 transition font-bold">Sign up first</a>
+                    </div>
+                    <div class="flex justify-center mt-4">
+                        <a href="#" class="text-white/80 hover:text-white text-sm transition">Forgot Password?</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- Keep your existing scripts -->
+    <script>
+        function showLoginAlert(event) {
+            event.preventDefault();
+            const form = event.target;
+            const formData = new FormData(form);
+
+            fetch('login_process.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => {
+                if (response.ok) {
+                    const alert = document.getElementById('loginAlert');
+                    alert.style.display = 'flex';
+                    setTimeout(() => {
+                        window.location.href = 'index.html';
+                    }, 1500);
+                } else {
+                    window.location.href = 'login.html?error=1';
+                }
+            });
+        }
+    </script>
+</body>
+</html>

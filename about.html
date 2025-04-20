@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Hiring Portal</title>
+    <link href="./src/output.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    
+    <style>
+        .fade-in {
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+        
+        .fade-in.animate {
+            opacity: 1;
+        }
+        
+        .slide-up {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease-out;
+        }
+        
+        .slide-up.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .slide-right {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: all 0.8s ease-out;
+        }
+        
+        .slide-right.animate {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .slide-left {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: all 0.8s ease-out;
+        }
+        
+        .slide-left.animate {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50">
+    
+    <!-- Hero Section -->
+    <div class="relative py-10 bg-gradient-to-b from-blue-700 to-blue-500 text-white">
+        <div class="container px-6">
+            <div class="max-w-3xl mx-auto text-center slide-up">
+                <h1 class="text-5xl font-bold mb-6">About Our Hiring Agency</h1>
+                <p class="text-xl text-blue-100">Connecting potential agents and streamlining the hiring process</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mission Section -->
+    <div class="py-16">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="slide-right">
+                    <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40" alt="Mission" class="rounded-lg shadow-lg">
+                </div>
+                <div class="slide-left">
+                    <h2 class="text-3xl font-bold mb-6 text-gray-800">Our Mission</h2>
+                    <p class="text-gray-600 mb-6">We are dedicated to building a platform that connects potential agents and simplifies the hiring process. Our goal is to streamline recruitment, foster collaboration, and enable seamless agent onboarding through innovative digital solutions.</p>
+                    <ul class="space-y-4">
+                        <li class="flex items-center">
+                            <svg class="w-6 h-6 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Seamless Agent Onboarding
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-6 h-6 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Streamlined Application Process
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-6 h-6 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Efficient Agent Collaboration
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Team Section -->
+    <div class="bg-gray-100 py-16">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12 slide-up">Our Leadership Team</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Team Member 1 -->
+                <div class="bg-white rounded-lg shadow-lg p-6 text-center slide-up">
+                    <img src="https://cdn-icons-png.freepik.com/512/16794/16794610.png" alt="Team Member" class="w-32 h-32 rounded-full mx-auto mb-4">
+                    <h3 class="text-xl font-bold mb-2">Shreya Sultania</h3>
+                    <p class="text-gray-600 mb-4">Platform Architect</p>
+                    <p class="text-gray-500">Oversees the design and development of the agent hiring ecosystem.</p>
+                </div>
+                <!-- Team Member 2 -->
+                <div class="bg-white rounded-lg shadow-lg p-6 text-center slide-up" data-delay="200">
+                    <img src="https://cdn-icons-png.freepik.com/512/13335/13335420.png" alt="Team Member" class="w-32 h-32 rounded-full mx-auto mb-4">
+                    <h3 class="text-xl font-bold mb-2">Ankit Singh</h3>
+                    <p class="text-gray-600 mb-4">Frontend Developer</p>
+                    <p class="text-gray-500">Crafts seamless interfaces for agents and recruiters alike.</p>
+                </div>
+                <!-- Team Member 3 -->
+                <div class="bg-white rounded-lg shadow-lg p-6 text-center slide-up" data-delay="400">
+                    <img src="https://cdn-icons-png.freepik.com/512/10337/10337525.png" alt="Team Member" class="w-32 h-32 rounded-full mx-auto mb-4">
+                    <h3 class="text-xl font-bold mb-2">Anshu</h3>
+                    <p class="text-gray-600 mb-4">Operations Manager</p>
+                    <p class="text-gray-500">Manages agent onboarding, compliance, and partnership workflows.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <div id="contact" class="py-16">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-lg p-8">
+                <h2 class="text-3xl font-bold text-center mb-8 slide-up">Get in Touch</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="slide-right">
+                        <h3 class="text-xl font-semibold mb-4">Contact Information</h3>
+                        <div class="space-y-4">
+                            <p class="flex items-center">
+                                <i class="fas fa-map-marker-alt w-6 text-blue-500"></i>
+                                13, Fifth Avenue, New York NY-1093
+                            </p>
+                            <p class="flex items-center">
+                                <i class="fas fa-envelope w-6 text-blue-500"></i>
+                                agentsupport@hiringplatform.com
+                            </p>
+                            <p class="flex items-center">
+                                <i class="fas fa-phone w-6 text-blue-500"></i>
+                                984-643-877
+                            </p>
+                        </div>
+                    </div>
+                    <div class="slide-left">
+                        <h3 class="text-xl font-semibold mb-4">Office Hours</h3>
+                        <div class="space-y-2">
+                            <p>Monday - Friday: 9:00 AM - 5:00 PM</p>
+                            <p>Saturday: 9:00 AM - 1:00 PM</p>
+                            <p>Sunday: Closed</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-6">
+            <div class="text-center">
+                <p>&copy; 2025 Agent Hiring Platform. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function isInViewport(element) {
+            const rect = element.getBoundingClientRect();
+            return (
+                rect.top <= (window.innerHeight || document.documentElement.clientHeight) * 0.75
+            );
+        }
+        function handleScroll() {
+            document.querySelectorAll('.fade-in, .slide-up, .slide-right, .slide-left').forEach(el => {
+                if (isInViewport(el) && !el.classList.contains('animate')) {
+                    const delay = el.getAttribute('data-delay') || 0;
+                    setTimeout(() => {
+                        el.classList.add('animate');
+                    }, parseInt(delay));
+                }
+            });
+        }
+
+        window.addEventListener('scroll', handleScroll);
+        document.addEventListener('DOMContentLoaded', handleScroll);
+    </script>
+</body>
+</html>

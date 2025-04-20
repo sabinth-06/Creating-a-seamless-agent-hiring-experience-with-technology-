@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Our Team - Hiring Portal</title>
+    <link href="./src/output.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        /* Background image for the entire body */
+        body {
+            background-image: url('image3.jpg'); /* Local image file */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        /* Animation styles */
+        .fade-in {
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+        
+        .fade-in.animate {
+            opacity: 1;
+        }
+        
+        .slide-up {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease-out;
+        }
+        
+        .slide-up.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Footer styles */
+        .footer-section {
+            padding: 4rem 2rem; /* Increased padding for spaciousness */
+            background-color: rgba(255, 255, 255, 0.9); /* Light background for footer */
+        }
+        .footer-title {
+            margin-bottom: 1rem; /* Space below the title */
+        }
+        .footer-content {
+            margin-bottom: 1rem; /* Space between paragraphs */
+        }
+    </style>
+</head>
+
+<body>
+    <main class="h-screen">
+        <div class="absolute h-[100vh] w-full opacity-40 z-1 left-0 bg-black"></div>
+        <div id="hero-section" class="bg-cover bg-center h-full">
+            <header class="flex justify-around">
+                <div class="flex gap-3 items-center pt-5 relative z-2 fade-in">
+                    <div class="logo-container flex items-center">
+                        <div class="logo-icon bg-white rounded-lg p-2 flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                                <path d="M12 2v3"></path>
+                                <path d="M4 14h2"></path>
+                                <path d="M18 14h2"></path>
+                            </svg>
+                        </div>
+                        <div class="logo-text ml-2 text-white font-bold">Join Our Team</div>
+                    </div>
+                </div>
+                <div class="flex gap-6 justify-center pt-7 relative z-2 fade-in">
+                    <a href="index.html" class="text-white z-2">Home</a>
+                    <a href="about.html" class="text-white z-2">About Us</a>
+                    <a href="jobs.html" class="text-white z-2">Job Listings</a>
+                    <a href="apply.html" class="text-white z-2">Apply Now</a>
+                    <a href="#footer-section" class="text-white z-2">Contact</a>
+                </div>
+                <div class="flex gap-6 items-center pt-5 relative z-2 fade-in">
+                    <i class="fa-brands fa-twitter" style="color: #ffffff;"></i>
+                    <i class="fa-brands fa-pinterest" style="color: #ffffff;"></i>
+                    <i class="fa-brands fa-youtube" style="color: #ffffff;"></i>
+                    <i class="fa-solid fa-magnifying-glass" style="color: #4e5155;"></i>
+                </div>
+            </header>
+            <section class="relative z-2">
+                <p class="text-white justify-center items-center flex pt-20 text-2xl font-semibold slide-up">Join Our Team and Make a Difference</p>
+                <p class="text-white justify-center items-center flex text-7xl pt-20 text-center zoom-in">Your Future Starts Here</p>
+            </section>
+            <div class="flex justify-center pt-15 gap-4">
+                <a href="jobs.html" class="bg-blue-500 relative z-2 h-[50px] w-[190px] rounded-4xl slide-up flex items-center justify-center">
+                    <p class="text-center text-white font-semibold tracking-wider">VIEW JOBS</p>
+                </a>
+                <a href="apply.html" class="bg-green-500 relative z-2 h-[50px] w-[190px] rounded-4xl slide-up flex items-center justify-center group hover:bg-green-600 transition-all duration-300 transform hover:scale-105 hover:shadow-xl">
+                    <p class="text-center text-white font-semibold tracking-wider group-hover:tracking-widest transition-all duration-300">
+                        <i class="fas fa-plus-circle mr-2"></i>APPLY NOW
+                    </p>
+                </a>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div id="footer-section" class="footer-section flex justify-evenly">
+            <div class="mt-8 fade-in" data-delay="100">
+                <p class="text-2xl footer-title">Resources</p>
+                <p class="footer-content">Application Tips</p>
+                <p class="footer-content">Interview Preparation</p>
+                <p class="footer-content">Company Culture</p>
+                <p class="footer-content">FAQ & Support</p>
+            </div>
+            <div class="mt-8 fade-in" data-delay="200">
+                <p class="text-2xl footer-title">About Us</p>
+                <p class="footer-content">We are committed to building a diverse and inclusive workplace where everyone can thrive.</p>
+            </div>
+            <div class="mt-8 fade-in" data-delay="300">
+                <p class="text-2xl footer-title">Contact Info</p>
+                <p class="text-blue-500 footer-content">123 Main Street, City, State 12345 <br> careers@company.com <br> (123) 456-7890</p>
+            </div>
+        </div>
+        <p class="font-light text-center fade-in">Copyright &copy; 2025 Your Company Name</p>
+    </main>
+
+    <!-- Add this script before the closing body tag -->
+    <script>
+        // Function to check if an element is in the viewport
+        function isInViewport(element) {
+            const rect = element.getBoundingClientRect();
+            return (
+                rect.top <= (window.innerHeight || document.documentElement.clientHeight) * 0.75
+            );
+        }
+        
+        // Function to handle scroll and trigger animations for a section
+        function animateSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            if (!section) return;
+            
+            if (isInViewport(section) && !section.classList.contains('animated')) {
+                section.classList.add('animated');
+                
+                const fadeElements = section.querySelectorAll('.fade-in');
+                fadeElements.forEach((el, index) => {
+                    const delay = el.getAttribute('data-delay') || index * 200;
+                    setTimeout(() => {
+                        el.classList.add('animate');
+                    }, parseInt(delay));
+                });
+                
+                const slideUpElements = section.querySelectorAll('.slide-up');
+                slideUpElements.forEach(el => {
+                    const delay = el.getAttribute('data-delay') || 0;
+                    setTimeout(() => {
+                        el.classList.add('animate');
+                    }, parseInt(delay));
+                });
+            }
+        }
+        
+        // Function to handle scroll and check all sections
+        function handleScroll() {
+            animateSection('hero-section');
+            animateSection('footer-section');
+        }
+        
+        // Add scroll event listener
+        window.addEventListener('scroll', handleScroll);
+        
+        // Animate hero section immediately on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                const heroSection = document.getElementById('hero-section');
+                if (heroSection) {
+                    heroSection.classList.add('animated');
+                    const animatedElements = heroSection.querySelectorAll('.fade-in, .slide-up');
+                    animatedElements.forEach(el => {
+                        el.classList.add('animate');
+                    });
+                }
+                handleScroll();
+            }, 300);
+        });
+    </script>
+</body>
+
+</html>

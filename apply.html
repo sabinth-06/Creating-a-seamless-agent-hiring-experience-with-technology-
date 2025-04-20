@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Apply Now - Hiring Portal</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script>
+    window.addEventListener("DOMContentLoaded", () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const status = urlParams.get('status');
+      if (status) {
+        const message = document.getElementById('message');
+        if (status === 'submitted') {
+          message.innerHTML = "<p class='text-green-600 text-center'>Thank you! Your application has been submitted successfully.</p>";
+        } else if (status === 'error') {
+          message.innerHTML = "<p class='text-red-600 text-center'>There was an error submitting your application. Please try again.</p>";
+        }
+      }
+    });
+  </script>
+</head>
+
+<body class="bg-cover bg-center min-h-screen flex flex-col" style="background-image: url('image6.file.jpg');">
+  <header class="bg-blue-700 text-white py-5 shadow-md">
+    <h1 class="text-center text-3xl font-semibold">Apply Now</h1>
+    <p class="text-center text-sm mt-1">Complete the form below to apply for a position with our company.</p>
+  </header>
+
+  <main class="flex-grow flex items-center justify-center px-4 py-10">
+    <div class="bg-white bg-opacity-80 backdrop-blur-md rounded-lg shadow-lg p-8 w-full max-w-2xl space-y-4">
+      <div id="message"></div>
+      <form action="send_email.php" method="POST" enctype="multipart/form-data">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-gray-700">First Name</label>
+            <input type="text" name="first_name" class="w-full border rounded px-3 py-2" required />
+          </div>
+          <div>
+            <label class="block text-gray-700">Last Name</label>
+            <input type="text" name="last_name" class="w-full border rounded px-3 py-2" required />
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-gray-700">Email Address</label>
+            <input type="email" name="email" class="w-full border rounded px-3 py-2" required />
+          </div>
+          <div>
+            <label class="block text-gray-700">Phone Number</label>
+            <input type="tel" name="phone" class="w-full border rounded px-3 py-2" />
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-gray-700">Position</label>
+          <select name="position" class="w-full border rounded px-3 py-2" required>
+            <option value="Software Engineer">Software Engineer</option>
+            <option value="Data Analyst">Data Analyst</option>
+            <option value="Product Manager">Product Manager</option>
+            <option value="HR Specialist">HR Specialist</option>
+            <option value="UI/UX Designer">UI/UX Designer</option>
+            <option value="DevOps Engineer">DevOps Engineer</option>
+            <option value="Technical Recruiter">Technical Recruiter</option>
+            <option value="Customer Success Manager">Customer Success Manager</option>
+            <option value="IT Support Specialist">IT Support Specialist</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block text-gray-700">Upload Resume</label>
+          <input type="file" name="resume" accept=".pdf,.docx" class="w-full border rounded px-3 py-2 bg-white" required />
+          <p class="text-sm text-gray-500 mt-1">Accepted formats: PDF, DOCX (Max 5MB)</p>
+        </div>
+
+        <div>
+          <label class="block text-gray-700">Cover Letter</label>
+          <textarea name="cover_letter" rows="4" class="w-full border rounded px-3 py-2 resize-none"></textarea>
+        </div>
+
+        <div class="flex items-start">
+          <input type="checkbox" name="consent" required class="mr-2 mt-1" />
+          <label class="text-sm text-gray-700">I consent to having my data processed according to the <a href="#" class="underline text-blue-600">Privacy Policy</a></label>
+        </div>
+
+        <div class="text-center">
+          <button type="submit" class="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded shadow">
+            Submit Application
+          </button>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <footer class="bg-gray-800 text-white py-4 text-center">
+    <p>&copy; 2025 Your Company Name. All rights reserved.</p>
+  </footer>
+</body>
+</html>
